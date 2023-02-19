@@ -1,0 +1,31 @@
+{
+  "name": "xrml",
+  "version": "23.2.14",
+  "description": "",
+  "keywords": [],
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve",
+    "build": "webpack --config ./configs/webpack.config.js && node ./configs/uglify.config.js",
+    "dev": "webpack serve"
+  },
+  "dependencies": {
+    "css-loader": "6.7.3",
+    "style-loader": "3.3.1",
+    "three": "0.149.0",
+    "uglify-js": "3.17.4",
+    "webpack": "5.75.0",
+    "webpack-cli": "5.0.1"
+  },
+  "uglifyConfig": {
+    "input": [
+      "./dist/xrml.js",
+      "./src/query/about.js",
+      "./src/query/xrquery.js",
+      "./src/global/attrfix.js"
+    ],
+    "output": "./dist/xrml.js",
+    "miniout": "./dist/xrml.min.js"
+  }
+}
